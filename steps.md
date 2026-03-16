@@ -48,6 +48,7 @@ python -m mlx_lm.lora \
 ```
 
 # Output
+```
 Fetching 6 files: 100%|██████████████████████████████████████████████████████████████████████████████████████| 6/6 [00:00<00:00, 89877.94it/s]
 Loading datasets
 Training
@@ -84,7 +85,7 @@ Iter 220: Train loss 0.108, Learning Rate 1.000e-05, It/sec 1.479, Tokens/sec 23
 Iter 230: Train loss 0.105, Learning Rate 1.000e-05, It/sec 1.477, Tokens/sec 233.907, Trained Tokens 36184, Peak mem 3.339 GB
 Iter 240: Train loss 0.105, Learning Rate 1.000e-05, It/sec 1.468, Tokens/sec 232.892, Trained Tokens 37770, Peak mem 3.339 GB
 Iter 250: Train loss 0.107, Learning Rate 1.000e-05, It/sec 1.472, Tokens/sec 228.998, Trained Tokens 39326, Peak mem 3.339 GB
-
+```
 
 # Step 5: Test and Fuse
 Once finished, you’ll have an safetensors file in adapter folder. You can test it immediately:
@@ -101,4 +102,23 @@ python -m mlx_lm.fuse \
   --model mlx-community/Llama-3.2-3B-Instruct-4bit \
   --adapter-path adapters/ \
   --save-path ./my-finetuned-llama
+```
+
+# Step 6: Start using it
+```
+python -m mlx_lm generate   --model my-finetuned-llama  --prompt "Write a bio for Software Engineer"
+==========
+Here's a sample bio for a Software Engineer:
+
+"Hi, I'm [Your Name], a highly motivated and detail-oriented Software Engineer with a passion for designing and developing innovative software solutions. With [Number] years of experience in the field, I have developed a strong foundation in programming languages, data structures, and software development methodologies.
+
+Throughout my career, I have worked on a wide range of projects, from mobile apps to web applications, and have a proven track record of delivering high-quality software products
+==========
+Prompt: 41 tokens, 193.201 tokens-per-sec
+Generation: 100 tokens, 90.310 tokens-per-sec
+Peak memory: 1.944 GB
+```
+By default max-tokens is 100.
+```
+--max-tokens 500
 ```
