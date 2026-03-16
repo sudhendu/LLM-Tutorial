@@ -16,9 +16,22 @@ huggingface-cli login
 ```
 
 # Prepare Your Data
-MLX expects data in a specific .jsonl format. Create a folder named data and a file named train.jsonl inside it:  
-{"text": "<|begin_of_text|><|start_header_id|>user<|end_header_id|>\n\nWrite a bio for a software engineer.<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\nI am a developer who loves building local AI tools on Mac...<|eot_id|>"}
-
+MLX expects data in a specific .jsonl format. Create a folder named data and a file named train.jsonl inside it: 
+```
+{
+  "text": "<|begin_of_text|>
+                <|start_header_id|>
+                    user
+                <|end_header_id|>\n\n
+                Write a bio for a software engineer.
+           <|eot_id|>
+                <|start_header_id|>
+                     assistant
+                <|end_header_id|>\n\n
+                I am a developer who loves building local AI tools on Mac...
+           <|eot_id|>"
+}
+```
 Generating a few hundred high-quality examples manually is tedious. In 2026, the standard way to do this is through Synthetic Data Generation.  
 You can use a "Teacher" model (like GPT-4o, Claude 3.5, or even a large local model like Llama 3.3 70B if you have the hardware) to generate variations of instructions and responses.  
 The "Seed & Expand" Python Script: trainDataGen.py  
