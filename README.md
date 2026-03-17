@@ -1,11 +1,11 @@
-# Create a dedicated directory and virtual environment
+# Step 1: Create a dedicated directory and virtual environment
 ```
 mkdir ml-mac && cd ml-mac
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-# Install Apple's MLX library
+# Step 2: Install Apple's MLX library
 ```
 pip install -U mlx-lm huggingface_hub
 ```
@@ -15,7 +15,7 @@ Log in to Hugging Face to access Llama models (get a token from hf.co/settings/t
 huggingface-cli login
 ```
 
-# Prepare Your Data
+# Step 3: Prepare Your Data
 MLX expects data in a specific .jsonl format. Create a folder named data and a file named train.jsonl inside it: 
 ```
 {
@@ -45,6 +45,7 @@ The training data is created in data/train.jsonl
  Run SplitData.py to split Training Data to 90:10 Training and Validation
 ```
 
+# Step 4: Train the model
 MLX makes this a one-line command. We will use LoRA (Low-Rank Adaptation), which only trains a small "adapter" layer, keeping the main model frozen to save memory.
 ```
 python -m mlx_lm.lora \
