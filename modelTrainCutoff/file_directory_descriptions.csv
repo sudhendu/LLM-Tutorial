@@ -1,0 +1,41 @@
+name,description
+aie-book,Likely a directory containing AI/engineering book notes or content.
+anaconda3,Anaconda Python distribution installation directory.
+Applications,macOS Applications folder for installed apps.
+Dell,Folder likely related to Dell files, drivers, or resources.
+Desktop,macOS Desktop folder.
+DMLMO,Project or coursework folder, likely ML-related.
+Documents,macOS Documents folder.
+Downloads,macOS Downloads folder.
+eclipse,Eclipse IDE installation or related configuration folder.
+eclipse-workspace,Default workspace folder used by Eclipse IDE.
+env.sh,Shell script for setting environment variables.
+ExperienceTelemetry,Folder likely containing telemetry or analytics-related work.
+githubncsu,GitHub-related folder, possibly for NCSU projects.
+go,Go language workspace or SDK-related directory.
+P4,Folder likely for Perforce (p4) or a project named P4.
+HPA,Folder likely related to Horizontal Pod Autoscaling or a project acronym.
+kubernetes,Kubernetes project/configuration directory.
+kubernetesVM,Folder for Kubernetes virtual machine setup files.
+latestOperatorRepo,Repository folder for latest operator code.
+Library,macOS user Library folder for app support and preferences.
+LinuxNetworking,Folder for Linux networking experiments or notes.
+livekit,Project directory likely related to LiveKit.
+LLM-Tutorial,Project directory for LLM tutorial work.
+Misc,Miscellaneous files and folders.
+ml-mac,Machine learning setup or projects for macOS.
+Movies,macOS Movies media folder.
+Music,macOS Music media folder.
+operator-playground,Sandbox directory for operator development/testing.
+PhDSimulationNS3,PhD simulation project directory using ns-3.
+Pictures,macOS Pictures media folder.
+Practice,Folder for practice exercises or experiments.
+projects,General-purpose projects directory.
+Public,macOS Public shared folder.
+pyang,Folder related to pyang (YANG model tool) or its usage.
+simpleApp,Folder for a simple application project.
+Sites,macOS Sites folder for web content.
+Virginia Department of Motor Vehicles | dmvNOW.pdf,PDF document likely related to Virginia DMV dmvNOW services.
+Virtual Machines.localized,macOS localized folder for virtual machine files.
+xcookie,Project or utility folder, possibly template/scaffolding-related.
+Xsight Labs,Folder related to Xsight Labs work or documents.
