@@ -60,7 +60,7 @@ python -m mlx_lm.lora \
 # --num-layers: Tells MLX to only train specific parts of the model.
 ```
 
-# Output
+## Output
 ```
 Fetching 6 files: 100%|██████████████████████████████████████████████████████████████████████████████████████| 6/6 [00:00<00:00, 89877.94it/s]  
 Loading datasets  
