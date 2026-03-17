@@ -99,6 +99,11 @@ Iter 240: Train loss 0.105, Learning Rate 1.000e-05, It/sec 1.468, Tokens/sec 23
 Iter 250: Train loss 0.107, Learning Rate 1.000e-05, It/sec 1.472, Tokens/sec 228.998, Trained Tokens 39326, Peak mem 3.339 GB  
 ```
 
+## Validations
+When you run your training, watch the val_loss.  
+If train_loss is dropping but val_loss is flat or rising, you are overfitting (the model is just memorizing lines, not understanding concepts).  
+Aim for a val_loss that moves downward alongside the train_loss.  
+
 # Step 5: Test and Fuse
 Once finished, you’ll have an safetensors file in adapter folder. You can test it immediately:
 ```
