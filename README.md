@@ -105,6 +105,24 @@ When you run your training, watch the val_loss.
 If train_loss is dropping but val_loss is flat or rising, you are overfitting (the model is just memorizing lines, not understanding concepts).  
 Aim for a val_loss that moves downward alongside the train_loss.  
 
+## Unexpected behavior after fine-tuning
+### The Alpha/Rank Ratio
+```
+Trainable parameters: 0.216% (6.947M/3212.750M)
+```
+In the mlx-lm defaults, sometimes the LoRA Alpha is too low compared to the Rank. This makes the "volume" of the adapter too quiet compared to the base model.  
+At 0.216%, the "voice" of your new data is too quiet to overcome the billions of parameters in the base model's "general" memory.  
+
+### The "Strength & Depth" Re-run
+We are going to increase the Rank (to store more detail) and the Alpha (to increase the "volume" of that detail).  
+--num-layers 24: By increasing from 16 to 24, you are injecting your "Post-it notes" deeper into the model's brain. For a 3B model, targeting more layers is crucial for "Knowledge Injection."  
+--rank 32: This doubles the "storage space" on each Post-it note. Since your CSV has many specific directory names, a higher rank helps the model distinguish between similar-looking paths (like kubernetes vs. kubernetesVM).  
+--lora-alpha 64: This is the most important part. The rule of thumb is Alpha = 2 * Rank. This acts like a volume knob. It tells the model: "When you see a conflict between your training and this new adapter, trust the adapter twice as much."  
+--iters 600: You need enough repetitions for the model to realize this isn't just "noise"—it's a new pattern.  
+```
+python -m mlx_lm.lora --config lora_config.yaml
+```
+
 # Step 5: Test and Fuse
 Once finished, you’ll have an safetensors file in adapter folder. You can test it immediately:
 ```
